@@ -13,11 +13,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"> {% block styles %} {% endblock %}
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"> 
+    
+    {% block styles %} 
+    
+    {% endblock %}
+
 </head>
 
 <body>
-    <div class="container">
+    <div class="">
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark mr-2">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link btn btn-dark ml-5" href="/"><strong>Página inicial</strong></a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link btn btn-dark ml-5" href="/film"><strong>Busque seu filme</strong></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
         
 
         <div class="block-content">

@@ -1,0 +1,36 @@
+{% extends './layouts/base.html' %}
+{% block content %}
+
+<div class="content-info">
+  <h3 class="title-initial">Descobra o filme ideal para seu dia!</h3>
+  <span class="span-initial">Diga-nos como está se sentindo que vamos indicar alguns filmes para seu momento!</span>
+<hr>
+  <form class="form-film">
+    <div class="form-group">
+      <label class="span-initial" for="email">Endereço de e-mail</label>
+      <input type="email" class="form-control" id="email" placeholder="nome@exemplo.com">
+    </div>
+  
+    <div class="form-group">
+      <label class="span-initial" for="sentiment">Descreva como está se sentindo</label>
+      <textarea class="form-control" id="sentiment" rows="6"></textarea>
+    </div>
+
+    <button type="button" class="btn btn-success" onclick="sendInformations()">Enviar</button>
+
+  </form>
+</div>
+
+{% endblock %}
+
+{% block title %}
+  Filmes
+{% endblock %}
+
+{% block script %}
+  <script src="/js/film.js" charset="utf-8"></script>
+{% endblock %}
+
+{% block styles %}
+  <link rel="stylesheet" href="/styles/film.css">
+{% endblock %}

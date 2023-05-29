@@ -30,6 +30,10 @@ app.get('/', (req, res) => {
     res.render('index.html');
 });
 
+app.get('/film', (req, res) => {
+    res.render('film.html');
+});
+
 app.get('/getInfo', async(req, res) => {
     console.log("Backend node");
 
