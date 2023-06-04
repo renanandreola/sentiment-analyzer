@@ -51,7 +51,7 @@ def getWords():
     plt.legend(patches, labels, loc="best")
     plt.axis('equal')
     plt.tight_layout()
-    plt.show()
+    # plt.show()
     
     return sizes;
 
