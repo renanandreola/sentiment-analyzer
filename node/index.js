@@ -3,7 +3,7 @@ const app = express();
 const nunjucks = require('nunjucks');
 const bodyParser = require('body-parser');
 const axios = require('axios');
-const translate = require('google-translate-api');
+const translate = require('translate-google');
 
 var port = process.env.PORT || 3000;
 
@@ -41,38 +41,52 @@ app.post('/filmInfo', async(req, res) => {
     console.log(req.body);
     let email = req.body.email;
     let sentiment = req.body.sentiment;
+    let translatedText = '';
 
-    const textTraduzido = await translateText(sentiment);
-    console.log(textTraduzido)
+    async function translateText(text, fromLanguage, toLanguage) {
+        const translatedText = await translate(text, { from: fromLanguage, to: toLanguage });
+        return translatedText;
+    }
 
-    // await axios.get('http://localhost:5000/getSentiment')
-    // .then((response) => {
-    //     console.log(response.data);
-    //     const obj = {
-    //         "status": 200,
-    //         "text": response.data
-    //     }
-    //     res.send(obj)
-    // })
-    // .catch((error) => {
-    //     console.error(error);
+    async function main() {
+        const text = sentiment;
+        translatedText = await translateText(text, 'pt', 'en');
+        console.log(`Texto traduzido: ${translatedText}`);
+        var a = await callPython()
+    }
 
-    //     const obj = {
-    //         "status": 500,
-    //         "error": error
-    //     }
+    main().catch((err) => {
+        console.error('Ocorreu um erro:', err);
+    });
 
-    //     res.send(obj)
-    // });
+    async function callPython() {
+        console.log('chamou', translatedText);
+        axios.post('http://localhost:5000/getSentiment', { data: translatedText }, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then((response) => {
+            console.log(response.data);
+            // const obj = {
+            //     "status": 200,
+            //     "text": response.data
+            // }
+            // res.send(obj)
+        })
+        .catch((error) => {
+            console.error(error);
+    
+            // const obj = {
+            //     "status": 500,
+            //     "error": error
+            // }
+    
+            // res.send(obj)
+        });
+    }
+    
+
 
 
 });
-
-async function translateText(text) {
-    try {
-        const result = await translate(text, { from: 'pt', to: 'en' });
-        return result.text;
-    } catch (error) {
-        return 'Ocorreu um erro na tradução:' + error;
-    }
-}

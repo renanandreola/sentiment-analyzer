@@ -1,11 +1,17 @@
-from flask import Flask
+from flask import Flask, request, jsonify
 from textblob import TextBlob
 import matplotlib.pyplot as plt
 
 app = Flask(__name__)
 
-@app.route("/getSentiment")
+@app.route("/getSentiment", methods=['POST'])
 def getWords():
+    data = request.get_json()  # Acessa os dados enviados como JSON
+    # Processar os dados recebidos
+    input_data = data['data']
+    
+    print("input_data", input_data)
+    
     def percentage(parte, total):
         return 100*float(parte)/float(total)
 
@@ -15,10 +21,10 @@ def getWords():
     polaridade = 0
 
     contents = []
-    contents.append(TextBlob("Fuck you men"))
-    contents.append(TextBlob("Soon of a beeach"))
-    contents.append(TextBlob("mamae aqui"))
-    contents.append(TextBlob("Mame aqui"))
+    contents.append(TextBlob(input_data))
+    # contents.append(TextBlob("Soon of a beeach"))
+    # contents.append(TextBlob("mamae aqui"))
+    # contents.append(TextBlob("Mame aqui"))
 
     for item in contents:
         polaridade += item.sentiment.polarity
@@ -39,14 +45,18 @@ def getWords():
     sizes = [positivo, neutro, negativo]
     colors = ['green', 'lightgray', 'red']
     patches,texts = plt.pie(sizes, colors=colors, startangle=90)
+    
+    print("sizes >>>>>>>>>>>>>>>>>>>>>>> ", sizes)
 
     plt.legend(patches, labels, loc="best")
     plt.axis('equal')
     plt.tight_layout()
     plt.show()
+    
+    return sizes;
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
     
 # from textblob import TextBlob
 # import matplotlib.pyplot as plt
