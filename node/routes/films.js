@@ -33,7 +33,13 @@ async function films(topLabel) {
             .then((response) => {
                 // console.log(response.data.results);
                 if (response.data && response.data.results) {
-                    let movies = response.data.results.slice(0, 3);
+                    // console.log("response.data.results", response.data.results.length);
+
+                    const array = response.data.results
+
+                    const startIndex = Math.floor(Math.random() * (array.length - 3));
+
+                    let movies = response.data.results.slice(startIndex, startIndex + 3);
                     // console.log("movies: ", movies);
         
                     resolve(movies);

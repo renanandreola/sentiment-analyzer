@@ -2,10 +2,9 @@ const express = require('express');
 const app = express();
 const nunjucks = require('nunjucks');
 const bodyParser = require('body-parser');
-const axios = require('axios');
-const appKeyTMDB = "017f6ab88d805f57d808c62757270224"
 const translateRoute = require('./routes/translate');
 const sentimentRoute = require('./routes/sentiment');
+const emailRoute = require('./routes/email');
 
 var port = process.env.PORT || 3000;
 
@@ -46,7 +45,16 @@ app.post('/filmInfo', async(req, res) => {
 
     let email = req.body.email;
     let sentiment = req.body.sentiment;
-    let translatedText = '';;
+    let translatedText = '';
+
+    async function sendEmail(result) {
+        try {
+            let resultEmail = await emailRoute(email, result);
+
+        } catch (error) {
+          console.error('Error sendEmail at server: ', error);
+        }
+    }
 
     async function getTranslate() {
         try {
@@ -55,6 +63,8 @@ app.post('/filmInfo', async(req, res) => {
             let result = await sentimentRoute(translatedText);
 
             res.send(result);
+
+            sendEmail(result);
 
         } catch (error) {
           console.error('Error getTranslate at server: ', error);
