@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="pt-BR" dir="ltr">
 
 <head>
     <meta charset="utf-8">
@@ -14,48 +14,44 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"> 
-    
     {% block styles %} 
     
     {% endblock %}
-
 </head>
 
 <body>
     <div class="">
-        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark mr-2">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item ">
-                        <a class="nav-link btn btn-dark ml-5" href="/"><strong>Página inicial</strong></a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link btn btn-dark ml-5" href="/film"><strong>Busque seu filme</strong></a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/film">Busque seu filme</a>
+            </li>
+        </ul>
 
         <div class="block-content">
-            {% block content %}
+            {% block content %} 
             
             {% endblock %}
         </div>
   
-        <footer class="page-footer font-small stylish-color-dark pt-4" style="background-image: url()">
+        <!-- <footer class="page-footer font-small stylish-color-dark pt-4" style="background-image: url()">
             <div class="text-center text-muted">
                 <p class="small">sentiment-analyzer <i class="fas fa-copyright"></i> Renan Marcos Andreolla - Rodrigo Muntini</p>
             </div>
-        </footer>
+        </footer> -->
     </div>
     <!-- scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js" charset="utf-8"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <!-- <script src="/js/base.js" charset="utf-8"></script> -->
-    {% block script %} {% endblock %}
+    <script src="/js/base.js" charset="utf-8"></script>
+    
+    {% block script %} 
+    
+    {% endblock %}
 </body>
 
 </html>

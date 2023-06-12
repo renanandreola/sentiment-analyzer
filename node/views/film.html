@@ -1,34 +1,112 @@
 {% extends './layouts/base.html' %}
 {% block content %}
 
-<div class="content-info">
-  <h3 class="title-initial">Descobra o filme ideal para seu dia!</h3>
-  <span class="span-initial">Diga-nos como está se sentindo que vamos indicar alguns filmes para seu momento!</span>
-<hr>
-  <form class="form-film">
-    <div class="form-group">
-      <label class="span-initial" for="email">Endereço de e-mail</label>
-      <input type="email" class="form-control" id="email" placeholder="nome@exemplo.com">
-    </div>
-  
-    <div class="form-group">
-      <label class="span-initial" for="sentiment">Descreva como está se sentindo</label>
-      <textarea class="form-control" id="sentiment" rows="6"></textarea>
-    </div>
-
-    <button type="button" class="btn btn-success" onclick="sendInformations()">Enviar</button>
-
-  </form>
-</div>
-
-{% endblock %}
-
-{% block title %}
-  Filmes
-{% endblock %}
+<!-- {% block title %}
+  Filme
+{% endblock %} -->
 
 {% block script %}
   <script src="/js/film.js" charset="utf-8"></script>
+{% endblock %}
+
+<div class="content-info">
+
+  <div class="infos-before">
+    <h3 class="title-initial">Descobra o filme ideal para seu dia!</h3>
+    <span class="span-initial">Diga-nos como está se sentindo que vamos indicar alguns filmes para seu momento!</span>
+    
+    <hr>
+    
+    <form class="form-film" onsubmit="sendInformations(event)">
+      <div class="form-group">
+        <label class="span-initial" for="email">Endereço de e-mail</label>
+        <input type="email" class="form-control" id="email" placeholder="nome@exemplo.com">
+      </div>
+    
+      <div class="form-group">
+        <label class="span-initial" for="sentiment">Descreva como está se sentindo</label>
+        <textarea class="form-control" id="sentiment" rows="6"></textarea>
+      </div>
+  
+      <button type="submit" class="btn btn-success">Enviar</button>
+  
+    </form>
+  </div>
+    
+  <div class="films">
+    
+    <div class="1">
+      <div class="film1">
+        <img id="back-1" src="" alt="">
+      </div>
+      
+      <div class="film1-content">
+        <div class="img-banner-1">
+          <img id="banner1" class="img-bn-1" src="" alt="">
+        </div>
+
+        <div class="content-film-1">
+          <span class="title-1">.</span>
+          <span class="language-1">.</span>
+          <hr>
+          <span class="sinopse-title-1">Sinopse:</span>
+          <span class="sinopse-1">.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="2" style="margin-top: 562px;">
+      <div class="film2">
+        <img id="back-2" src="" alt="">
+      </div>
+      
+      <div class="film2-content">
+        <div class="img-banner-2">
+          <img id="banner2" class="img-bn-2" src="" alt="">
+        </div>
+
+        <div class="content-film-2">
+          <span class="title-2">.</span>
+          <span class="language-2">.</span>
+          <hr>
+          <span class="sinopse-title-2">Sinopse:</span>
+          <span class="sinopse-2">.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="3" style="margin-top: 562px;">
+      <div class="film3">
+        <img id="back-3" src="" alt="">
+      </div>
+      
+      <div class="film3-content">
+        <div class="img-banner-3">
+          <img id="banner3" class="img-bn-3" src="" alt="">
+        </div>
+
+        <div class="content-film-3">
+          <span class="title-3">.</span>
+          <span class="language-3">.</span>
+          <hr>
+          <span class="sinopse-title-3">Sinopse:</span>
+          <span class="sinopse-3">.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- JUST HIDDEN -->
+    <div class="3" style="margin-top: 562px; visibility:hidden">
+      <div class="film3">
+      </div>
+      <div class="film3-content">
+        <div class="img-banner-3">
+      </div>
+    </div>
+  </div>
+  
+</div>
+
 {% endblock %}
 
 {% block styles %}

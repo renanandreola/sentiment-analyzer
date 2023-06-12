@@ -1,21 +1,24 @@
 {% extends './layouts/base.html' %}
 {% block content %}
 
-<img class="img-gif" src="https://www.caviarcriativo.com/storage/2020/06/Significados-da-Marca-Netflix-1.gif" alt="">
-
-<div class="content-info">
-  <h3 class="title-initial">Descobra o filme ideal para seu dia!</h3>
-  <span class="span-initial">Dentro da aba "Busque seu filme" você poderá descrever como está se sentindo e indicaremos o filme(ou alguns filmes) ideal para o seu momento.</span>
-</div>
-
-{% endblock %}
-
-{% block title %}
-  Pagina inicial
-{% endblock %}
+<!-- {% block title %}
+  Página inicial
+{% endblock %} -->
 
 {% block script %}
   <script src="/js/index.js" charset="utf-8"></script>
+{% endblock %}
+
+<img class="img-gif" src="https://www.caviarcriativo.com/storage/2020/06/Significados-da-Marca-Netflix-1.gif" alt="">
+
+<div class="container">
+  <div class="content-info">
+    <h3 class="title-initial">Descobra o filme ideal para seu dia!</h3>
+    <hr>
+    <span class="span-initial">Dentro da aba "Busque seu filme" você poderá descrever como está se sentindo e indicaremos 3 filmes ideais para o seu dia.</span>
+  </div>
+</div>
+
 {% endblock %}
 
 {% block styles %}
