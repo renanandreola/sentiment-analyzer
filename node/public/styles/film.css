@@ -51,12 +51,12 @@
 
 /* 1 */
 .film1 {
-    position: absolute;
+    position: relative;
     opacity: 0.3;
 }
 
 .film1-content {
-    position: absolute;
+    position: relative;
     display: flex;
     width: 100%;
     padding: 4%;
@@ -106,13 +106,14 @@
 }
 
 /* 2 */
+
 .film2 {
-    position: absolute;
+    position: relative;
     opacity: 0.3;
 }
 
 .film2-content {
-    position: absolute;
+    position: relative;
     display: flex;
     width: 100%;
     padding: 4%;
@@ -163,14 +164,15 @@
 
 /* 3 */
 .film3 {
-    position: absolute;
+    position: relative;
     opacity: 0.3;
 }
 
 .film3-content {
-    position: absolute;
+    position: relative;
     display: flex;
     width: 100%;
+    height: auto;
     padding: 4%;
 }
 
