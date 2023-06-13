@@ -92,7 +92,14 @@
     color: white;
 }
 
+
 .sinopse-1 {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.gender-1 {
     font-size: 20px;
     font-weight: bold;
     color: white;
@@ -147,6 +154,12 @@
     color: white;
 }
 
+.gender-2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
 
 /* 3 */
 .film3 {
@@ -192,6 +205,12 @@
 }
 
 .sinopse-3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.gender-3 {
     font-size: 20px;
     font-weight: bold;
     color: white;
