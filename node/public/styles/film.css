@@ -53,13 +53,15 @@
 .film1 {
     position: relative;
     opacity: 0.3;
+    z-index: 1;
 }
 
 .film1-content {
-    position: relative;
+    position: absolute;
     display: flex;
     width: 100%;
     padding: 4%;
+    z-index: 2;
 }
 
 .img-bn-1 {
@@ -110,13 +112,15 @@
 .film2 {
     position: relative;
     opacity: 0.3;
+    z-index: 1;
 }
 
 .film2-content {
-    position: relative;
+    position: absolute;
     display: flex;
     width: 100%;
     padding: 4%;
+    z-index: 2;
 }
 
 .img-bn-2 {
@@ -166,14 +170,16 @@
 .film3 {
     position: relative;
     opacity: 0.3;
+    z-index: 1;
 }
 
 .film3-content {
-    position: relative;
+    position: absolute;
     display: flex;
     width: 100%;
     height: auto;
     padding: 4%;
+    z-index: 2;
 }
 
 .img-bn-3 {
