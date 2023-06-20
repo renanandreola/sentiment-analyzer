@@ -1,7 +1,8 @@
 $(".films").css('display', 'none');
 
 function sendInformations(event) {
-    event.preventDefault()
+    event.preventDefault();
+    
     let email = $("#email").val();
     let sentiment = $("#sentiment").val();
 
@@ -35,6 +36,7 @@ function sendInformations(event) {
 
                 var movies = res.movies;
 
+                // FILM 1
                 const imgBackground1 = document.getElementById('back-1');
                 imgBackground1.src = 'https://image.tmdb.org/t/p/w1920_and_h800_multi_faces' + movies[0].backdrop_path;
                 const imgBanner1 = document.getElementById('banner1');
@@ -48,9 +50,10 @@ function sendInformations(event) {
                 .then(response => response.json())
                 .then(data => {
                     const genres = data.genres;
+
                     const genreNames = movies[0].genre_ids.map(genreId => {
-                    const genre = genres.find(g => g.id === genreId);
-                    return genre ? genre.name : '';
+                        const genre = genres.find(g => g.id === genreId);
+                        return genre ? genre.name : '';
                     });
 
                     $('.gender-1').text('Gêneros: ' + genreNames.join(', '));
@@ -59,7 +62,7 @@ function sendInformations(event) {
                     console.error('Erro ao obter detalhes do gênero:', error);
                 });
                 
-                
+                // FILM 2
                 const imgBackground2 = document.getElementById('back-2');
                 imgBackground2.src = 'https://image.tmdb.org/t/p/w1920_and_h800_multi_faces' + movies[1].backdrop_path;
                 const imgBanner2 = document.getElementById('banner2');
@@ -72,9 +75,10 @@ function sendInformations(event) {
                 .then(response => response.json())
                 .then(data => {
                     const genres = data.genres;
+
                     const genreNames = movies[1].genre_ids.map(genreId => {
-                    const genre = genres.find(g => g.id === genreId);
-                    return genre ? genre.name : '';
+                        const genre = genres.find(g => g.id === genreId);
+                        return genre ? genre.name : '';
                     });
 
                     $('.gender-2').text('Gêneros: ' + genreNames.join(', '));
@@ -83,7 +87,7 @@ function sendInformations(event) {
                     console.error('Erro ao obter detalhes do gênero:', error);
                 });
 
-
+                // FILM 3
                 const imgBackground3 = document.getElementById('back-3');
                 imgBackground3.src = 'https://image.tmdb.org/t/p/w1920_and_h800_multi_faces' + movies[2].backdrop_path;
                 const imgBanner3 = document.getElementById('banner3');
@@ -96,9 +100,10 @@ function sendInformations(event) {
                 .then(response => response.json())
                 .then(data => {
                     const genres = data.genres;
+
                     const genreNames = movies[2].genre_ids.map(genreId => {
-                    const genre = genres.find(g => g.id === genreId);
-                    return genre ? genre.name : '';
+                        const genre = genres.find(g => g.id === genreId);
+                        return genre ? genre.name : '';
                     });
 
                     $('.gender-3').text('Gêneros: ' + genreNames.join(', '));
@@ -107,6 +112,7 @@ function sendInformations(event) {
                     console.error('Erro ao obter detalhes do gênero:', error);
                 });
 
+                // LAYOUT
                 $(".infos-before").css('display', 'none');
                 $(".films").css('display', 'flex');
 
